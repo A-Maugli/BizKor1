@@ -37,15 +37,17 @@ const AppCalls = ({ openModal, setModalState }: AppCallsInterface) => {
       {
         sender: { signer, addr: activeAddress } as TransactionSignerAccount,
         resolveBy: 'id',
-        id: 0,
+        id: 641503560,
       },
       algodClient,
     )
+    /*
     await appClient.create.createApplication({}).catch((e: Error) => {
       enqueueSnackbar(`Error deploying the contract: ${e.message}`, { variant: 'error' })
       setLoading(false)
       return
     })
+    */
 
     const response = await appClient.hello({ name: contractInput }).catch((e: Error) => {
       enqueueSnackbar(`Error calling the contract: ${e.message}`, { variant: 'error' })
