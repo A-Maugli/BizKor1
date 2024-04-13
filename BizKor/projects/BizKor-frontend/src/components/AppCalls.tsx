@@ -33,7 +33,7 @@ const AppCalls = ({ openModal, setModalState }: AppCallsInterface) => {
     // Instead, you would deploy your contract on your backend and reference it by id.
     // Given the simplicity of the starter contract, we are deploying it on the frontend
     // for demonstration purposes.
-    const appClient = new HelloworldClient(
+    const appClient = new HelloWorldClient(
       {
         sender: { signer, addr: activeAddress } as TransactionSignerAccount,
         resolveBy: 'id',
