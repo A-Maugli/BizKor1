@@ -31,7 +31,7 @@ switch *call_NoOp *NOT_IMPLEMENTED *NOT_IMPLEMENTED *NOT_IMPLEMENTED *NOT_IMPLEM
 getSum:
 	proto 2 1
 
-	// contracts/HelloWorld.algo.ts:13
+	// contracts\HelloWorld.algo.ts:13
 	// return a + b;
 	frame_dig -1 // a: uint64
 	frame_dig -2 // b: uint64
@@ -48,7 +48,7 @@ getSum:
 getDifference:
 	proto 2 1
 
-	// contracts/HelloWorld.algo.ts:24
+	// contracts\HelloWorld.algo.ts:24
 	// return a >= b ? a - b : b - a;
 	frame_dig -1 // a: uint64
 	frame_dig -2 // b: uint64
@@ -108,7 +108,7 @@ doMath:
 	byte 0x
 
 	// *if0_condition
-	// contracts/HelloWorld.algo.ts:39
+	// contracts\HelloWorld.algo.ts:39
 	// operation === 'sum'
 	frame_dig -3 // operation: string
 	byte 0x73756d // "sum"
@@ -116,7 +116,7 @@ doMath:
 	bz *if0_elseif1_condition
 
 	// *if0_consequent
-	// contracts/HelloWorld.algo.ts:40
+	// contracts\HelloWorld.algo.ts:40
 	// result = this.getSum(a, b)
 	frame_dig -2 // b: uint64
 	frame_dig -1 // a: uint64
@@ -125,7 +125,7 @@ doMath:
 	b *if0_end
 
 *if0_elseif1_condition:
-	// contracts/HelloWorld.algo.ts:41
+	// contracts\HelloWorld.algo.ts:41
 	// operation === 'difference'
 	frame_dig -3 // operation: string
 	byte 0x646966666572656e6365 // "difference"
@@ -133,7 +133,7 @@ doMath:
 	bz *if0_else
 
 	// *if0_elseif1_consequent
-	// contracts/HelloWorld.algo.ts:42
+	// contracts\HelloWorld.algo.ts:42
 	// result = this.getDifference(a, b)
 	frame_dig -2 // b: uint64
 	frame_dig -1 // a: uint64
@@ -145,7 +145,7 @@ doMath:
 	err // 'Invalid operation'
 
 *if0_end:
-	// contracts/HelloWorld.algo.ts:45
+	// contracts\HelloWorld.algo.ts:45
 	// return result;
 	frame_dig 0 // result: uint64
 
@@ -185,7 +185,7 @@ doMath:
 hello:
 	proto 1 1
 
-	// contracts/HelloWorld.algo.ts:56
+	// contracts\HelloWorld.algo.ts:56
 	// return 'Hello, ' + name;
 	byte 0x48656c6c6f2c20 // "Hello, "
 	frame_dig -1 // name: string
